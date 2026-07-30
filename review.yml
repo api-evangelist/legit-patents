@@ -1,0 +1,97 @@
+name: Legit Patents
+description: >-
+  Enrichment-pipeline review of Legit Patents (legit.ai), a Seedcamp portfolio
+  lead. Filed as the documented fallback: the company is defunct and no API or
+  developer surface exists to harvest.
+url: https://raw.githubusercontent.com/api-evangelist/legit-patents/refs/heads/main/review.yml
+created: '2026-07-19'
+modified: '2026-07-19'
+reviews:
+  - date: '2026-07-19'
+    rating: 0
+    summary: >-
+      Legit Patents is defunct and has no API surface, so no enrichment artifacts
+      were authored. Seedcamp still lists the company on its companies page
+      ("Legit Patents", AI category, 2016 cohort) linking to http://legit.ai, but
+      that domain is now parked: it serves a 114-byte redirect stub to /lander,
+      which 302s to an Afternic "legit.ai is for sale" listing. DNS confirms the
+      handover — nameservers are ns3/ns4.afternic.com, the MX record is the null
+      "0 ." form, and TXT carries only the GoDaddy parking default "v=spf1 -all".
+      Because the parking page is a catch-all, EVERY probed path returns HTTP 200,
+      including /.well-known/security.txt, /.well-known/openid-configuration,
+      /.well-known/oauth-authorization-server, /.well-known/api-catalog,
+      /.well-known/ai-plugin.json, /llms.txt and /openapi.json. These are all
+      false positives — the bodies are either the redirect stub or, in the case
+      of /llms.txt, GoDaddy's own domain-for-sale text. No well-known, llms.txt or
+      security artifacts were written, since capturing them would misattribute
+      GoDaddy parking infrastructure to Legit Patents. A full Wayback CDX sweep of
+      the legit.ai domain (169 captured URLs) contains no /api, /docs, /developer,
+      /swagger, /openapi, /graphql or reference path at any point in the site's
+      history; the only machine surfaces ever archived were marketing feeds
+      (atom.xml, feed.xml) and a React app bundle under /app. Homepage snapshots
+      collapse from ~11KB in April 2021 to under 1KB from October 2021 onward, and
+      the LinkedIn company page (linkedin.com/company/legitai) now returns 404.
+      The last substantive capture (2021-04-29) shows the mature product: an
+      expert-network marketplace, "The Most Effective Way To Message Life Sciences
+      Experts", charging $20 per expert reply against a claimed two-million-expert
+      index, based at 234 Broadway, Cambridge, MA 02139. Recommend leaving this
+      repo as a defunct stub; re-evaluate only if the brand relaunches on a new
+      domain.
+    endpoints:
+      - url: https://legit.ai/
+        status: 200
+        note: 114-byte JS redirect stub to /lander; not company content.
+      - url: https://legit.ai/lander
+        status: 200
+        note: Redirects to afternic.com "legit.ai is for sale" listing.
+      - url: https://legit.ai/.well-known/security.txt
+        status: 200
+        note: FALSE POSITIVE — body is the parking redirect stub, not RFC 9116 text.
+      - url: https://legit.ai/.well-known/openid-configuration
+        status: 200
+        note: FALSE POSITIVE — parking catch-all.
+      - url: https://legit.ai/.well-known/oauth-authorization-server
+        status: 200
+        note: FALSE POSITIVE — parking catch-all.
+      - url: https://legit.ai/.well-known/api-catalog
+        status: 200
+        note: FALSE POSITIVE — parking catch-all.
+      - url: https://legit.ai/.well-known/ai-plugin.json
+        status: 200
+        note: FALSE POSITIVE — parking catch-all.
+      - url: https://legit.ai/llms.txt
+        status: 200
+        note: FALSE POSITIVE — GoDaddy domain-for-sale llms.txt, not the company's.
+      - url: https://legit.ai/openapi.json
+        status: 200
+        note: FALSE POSITIVE — parking catch-all.
+      - url: https://www.linkedin.com/company/legitai
+        status: 404
+        note: Company page removed; link harvested from the 2021 archived site.
+      - url: https://seedcamp.com/companies/
+        status: 200
+        note: Still lists "Legit Patents" (AI, 2016) linking to http://legit.ai.
+      - url: https://web.archive.org/web/20210429093757id_/https://legit.ai/
+        status: 200
+        note: Last substantive homepage capture (~11KB), 2021-04-29.
+    dns:
+      domain: legit.ai
+      nameservers:
+        - ns3.afternic.com
+        - ns4.afternic.com
+      mx: '0 .'
+      txt:
+        - v=spf1 -all
+      note: >-
+        Records are GoDaddy/Afternic parking defaults, not operator-controlled.
+        No domain-security artifact was written, since probing would characterize
+        the parking host rather than the company.
+    artifacts_considered:
+      - {artifact: openapi, written: false, reason: No specification ever published.}
+      - {artifact: packages, written: false, reason: No first-party SDK on any registry.}
+      - {artifact: well-known, written: false, reason: All 200s are parking-page false positives.}
+      - {artifact: llms, written: false, reason: Live /llms.txt belongs to GoDaddy, not the company.}
+      - {artifact: mcp, written: false, reason: No OpenAPI to derive candidate tools from.}
+      - {artifact: security, written: false, reason: DNS/TLS now describes Afternic parking, not Legit.}
+      - {artifact: skills, written: false, reason: No OpenAPI to ground skills in.}
+      - {artifact: asyncapi, written: false, reason: No event or webhook surface.}
