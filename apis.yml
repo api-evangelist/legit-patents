@@ -40,7 +40,7 @@ x-status-detail: >-
   No substantive web presence after 2021; LinkedIn company page returns 404 and
   the legit.ai domain is parked and listed for sale on GoDaddy/Afternic as of
   2026-07-19. Never published a public API.
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
 tags:
