@@ -40,6 +40,8 @@ description: >-
   documentation or machine-readable specification was ever published; see
   review.yml for the full probe record.
 url: https://raw.githubusercontent.com/api-evangelist/legit-patents/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
