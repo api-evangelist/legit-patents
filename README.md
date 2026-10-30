@@ -64,10 +64,28 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Legit (listed by Seedcamp as "Legit Patents", 2016 cohort, legit.ai) was a Cambridge, Massachusetts startup applying natural-language processing to scientific and patent literature, which it developed into an on-demand expert network for the life sciences. Its product let pharmaceutical, biotech and medical-device teams search a corpus the company described as more than two million experts backed by roughly forty million data points, then pay a flat fee per reply to message key opinion leaders directly instead of scheduling calls — marketed for R&D, business development and licensing (BD&L), strategic alliances and integration management.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-**Status: defunct.** Substantive legit.ai content disappears from the web archive after 2021, the LinkedIn company page returns HTTP 404, and the legit.ai domain is now parked on GoDaddy/Afternic and listed for sale. No public API, developer portal, documentation or machine-readable specification was ever published.
+Legit (listed by Seedcamp as "Legit Patents", 2016 cohort, legit.ai) was a Cambridge, Massachusetts startup applying natural-language processing to scientific and patent literature, which it developed into an on-demand expert network for the life sciences. Its product let pharmaceutical, biotech and medical-device teams search a corpus the company described as more than two million experts backed by roughly forty million data points, then pay a flat fee per reply to message key opinion leaders directly instead of scheduling calls — marketed for R&D, business development and licensing (BD&L), strategic alliances and integration management. The company is no longer operating: substantive legit.ai content disappears from the web archive after 2021, its LinkedIn company page returns HTTP 404, and the legit.ai domain is now parked on GoDaddy/Afternic and listed for sale (Afternic nameservers, a null MX record and an SPF "-all" policy). No public API, developer portal, documentation or machine-readable specification was ever published; see review.yml for the full probe record.
 
-Because the parking page is a catch-all, every path on legit.ai — including `/.well-known/security.txt`, `/llms.txt` and `/openapi.json` — returns HTTP 200. Those are false positives and were deliberately **not** captured as artifacts. See [review.yml](review.yml) for the full probe record.
+**Areas:** Company · Life Sciences · Expert Network · Natural Language Processing · Scientific Literature · Patents · Search · Biotechnology · Pharmaceuticals · Key Opinion Leaders · Defunct
 
-Backed by: seedcamp
+## Legit Patents on APIs.io (historical record)
+
+Everything profiled for Legit Patents is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/legit-patents/](https://apis.io/providers/legit-patents/)** — or go straight to one of the APIs or properties below.
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Legit Patents: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/legit-patents/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
